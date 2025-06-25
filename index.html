@@ -73,6 +73,78 @@
         a img:hover {
             transform: scale(1.03);
         }
+
+        .trending-wrapper {
+            position: relative;
+        }
+
+        .trending-scroll {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            scroll-snap-type: x mandatory;
+            scroll-padding: 2rem;
+        }
+
+        .trending-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Default desktop: 3 item */
+        .trending-item {
+            flex: 0 0 28%;
+            scroll-snap-align: start;
+        }
+
+        /* Tablet: 2 item */
+        @media (max-width: 992px) {
+            .trending-scroll {
+                padding: 1rem 1.5rem;
+                scroll-padding: 1.5rem;
+            }
+
+            .trending-item {
+                flex: 0 0 40%;
+            }
+        }
+
+        /* Mobile: 1 item */
+        @media (max-width: 576px) {
+            .trending-scroll {
+                padding: 1rem 1rem;
+                scroll-padding: 1rem;
+            }
+
+            .trending-item {
+                flex: 0 0 80%;
+            }
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            z-index: 10;
+            width: 40px;
+            height: 60px;
+            cursor: pointer;
+            user-select: none;
+            /* supaya gak keblok */
+        }
+
+        .scroll-btn.left {
+            left: 0;
+        }
+
+        .scroll-btn.right {
+            right: 0;
+        }
     </style>
 </head>
 
@@ -145,28 +217,59 @@
 
     <!-- Trending Section -->
     <section class="container pb-5">
-        <h3 class="hero-title text-center">TRENDING NOW</h3>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <a href="#">
-                    <img src="asset/img/game-1.jpg" class="img-fluid rounded" alt="Game 1" />
-                </a>
+        <h3 class="mb-4 text-center">TRENDING NOW</h3>
+
+        <div class="trending-wrapper" style="position: relative;">
+            <button class="scroll-btn left" onclick="scrollTrending(-1)">
+                &#10094;
+            </button>
+
+            <div class="trending-scroll" id="trendingScroll">
+                <div class="trending-item">
+                    <a href="#"><img src="asset/img/game-1.jpg" class="img-fluid rounded" alt="Game 1" /></a>
+                </div>
+                <div class="trending-item">
+                    <a href="#"><img src="asset/img/game-1.jpg" class="img-fluid rounded" alt="Game 2" /></a>
+                </div>
+                <div class="trending-item">
+                    <a href="#"><img src="asset/img/game-1.jpg" class="img-fluid rounded" alt="Game 3" /></a>
+                </div>
+                <div class="trending-item">
+                    <a href="#"><img src="asset/img/game-1.jpg" class="img-fluid rounded" alt="Game 4" /></a>
+                </div>
+                <div class="trending-item">
+                    <a href="#"><img src="asset/img/game-1.jpg" class="img-fluid rounded" alt="Game 5" /></a>
+                </div>
             </div>
-            <div class="col-md-4">
-                <a href="#">
-                    <img src="asset/img/game-1.jpg" class="img-fluid rounded" alt="Game 2" />
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="#">
-                    <img src="asset/img/game-1.jpg" class="img-fluid rounded" alt="Game 3" />
-                </a>
-            </div>
+
+            <button class="scroll-btn right" onclick="scrollTrending(1)">
+                &#10095;
+            </button>
         </div>
     </section>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function scrollTrending(direction) {
+            const container = document.getElementById("trendingScroll");
+            let scrollAmount;
+
+            if (window.innerWidth <= 576) {
+                scrollAmount = container.offsetWidth * 0.8 + 16;
+            } else if (window.innerWidth <= 992) {
+                scrollAmount = container.offsetWidth * 0.4 + 16;
+            } else {
+                scrollAmount = container.offsetWidth * 0.28 + 16;
+            }
+
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: "smooth"
+            });
+        }
+    </script>
 </body>
 
 </html>
