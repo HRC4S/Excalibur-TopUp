@@ -133,20 +133,23 @@ a img:hover {
 /* Game Card Styles */
 .game-card-inner {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 0.75rem;
+    border-radius: 1.5rem;
+    /* lebih bulat */
     overflow: hidden;
+    height: 280px;
+    /* tinggi lebih panjang */
     background-color: #ffc107;
-    color: black;
+    /* kuning */
 }
 
 .game-card-inner img {
-    border-top-left-radius: 0.75rem;
-    border-top-right-radius: 0.75rem;
+    height: 160px;
     object-fit: cover;
-    height: 150px;
-    width: 100%;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
 }
 
+/* Hover efek */
 .game-card:hover .game-card-inner {
     transform: translateY(-5px) scale(1.03);
     box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
