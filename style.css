@@ -1,161 +1,162 @@
 body {
-  font-family: "Poppins", sans-serif;
-  background: radial-gradient(circle, #3a3a3a, #1e1e1e);
-  color: white;
-  margin: 0;
-  min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background: radial-gradient(circle, #3a3a3a, #1e1e1e);
+    color: white;
+    margin: 0;
+    min-height: 100vh;
 }
 
 .mb-4 {
-  font-weight: 600;
-  font-size: 2rem;
-  color: white;
+    font-weight: 600;
+    font-size: 2rem;
+    color: white;
 }
 
 .hero-title {
-  font-weight: 700;
-  font-size: 2rem;
-  color: white;
+    font-weight: 700;
+    font-size: 2rem;
+    color: white;
 }
 
 .hero-desc {
-  font-weight: 500;
-  font-size: 1rem;
-  color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    color: white;
 }
 
 .btn-yellow {
-  background-color: #ffc107;
-  color: black;
-  font-weight: bold;
+    background-color: #ffc107;
+    color: black;
+    font-weight: bold;
 }
 
 .logo-navbar {
-  height: 50px;
-  width: auto;
+    height: 50px;
+    width: auto;
 }
 
 .navbar {
-  min-height: 70px;
-  display: flex;
-  align-items: center;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
 }
 
 .navbar-brand {
-  margin-right: 6rem;
+    margin-right: 6rem;
 }
 
 .navbar-nav.mx-auto {
-  transform: translateX(150px);
+    transform: translateX(150px);
 }
 
-.navbar-nav.mx-auto > li.nav-item {
-  margin: 0 1rem;
+.navbar-nav.mx-auto>li.nav-item {
+    margin: 0 1rem;
 }
 
 a img {
-  cursor: pointer;
-  transition: transform 0.2s ease;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
 a img:hover {
-  transform: scale(1.03);
+    transform: scale(1.03);
 }
 
 .trending-wrapper {
-  position: relative;
+    position: relative;
 }
 
 .trending-scroll {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 1rem;
-  padding: 1rem 2rem;
-  scroll-snap-type: x mandatory;
-  scroll-padding: 2rem;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 2rem;
 }
 
 .trending-scroll::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .trending-item {
-  flex: 0 0 28%;
-  scroll-snap-align: start;
+    flex: 0 0 28%;
+    scroll-snap-align: start;
 }
 
 @media (max-width: 992px) {
-  .trending-scroll {
-    padding: 1rem 1.5rem;
-    scroll-padding: 1.5rem;
-  }
+    .trending-scroll {
+        padding: 1rem 1.5rem;
+        scroll-padding: 1.5rem;
+    }
 
-  .trending-item {
-    flex: 0 0 40%;
-  }
+    .trending-item {
+        flex: 0 0 40%;
+    }
 }
 
 @media (max-width: 576px) {
-  .trending-scroll {
-    padding: 1rem 1rem;
-    scroll-padding: 1rem;
-  }
+    .trending-scroll {
+        padding: 1rem 1rem;
+        scroll-padding: 1rem;
+    }
 
-  .trending-item {
-    flex: 0 0 80%;
-  }
+    .trending-item {
+        flex: 0 0 80%;
+    }
 }
 
 .scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  font-size: 2rem;
-  z-index: 10;
-  width: 40px;
-  height: 60px;
-  cursor: pointer;
-  user-select: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    z-index: 10;
+    width: 40px;
+    height: 60px;
+    cursor: pointer;
+    user-select: none;
 }
 
 .scroll-btn.left {
-  left: 0;
+    left: 0;
 }
 
 .scroll-btn.right {
-  right: 0;
+    right: 0;
 }
 
 /* Game Card Styles */
 .game-card-inner {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  background-color: #ffc107;
-  color: black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: #ffc107;
+    color: black;
 }
 
 .game-card-inner img {
-  border-top-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
-  object-fit: cover;
-  height: 150px;
-  width: 100%;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    object-fit: cover;
+    height: 150px;
+    width: 100%;
 }
 
 .game-card:hover .game-card-inner {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
 }
+
 .hr-yellow {
-  border: none;
-  height: 4px;
-  width: 150px;
-  background-color: #ffc107;
-  margin: 2rem auto;
-  border-radius: 5px;
+    border: none;
+    height: 4px;
+    width: 150px;
+    background-color: #ffc107;
+    margin: 2rem auto;
+    border-radius: 5px;
 }
